@@ -1,0 +1,27 @@
+
+      <div class="modal">
+
+    <!-- Modal header bar -->
+    <ion-header-bar class="bar-secondary">
+      <h1 class="title">New Category</h1>
+      <button class="button button-clear button-positive" ng-click="closeNewCategory()">Cancel</button>
+    </ion-header-bar>
+
+    <!-- Modal content area -->
+    <ion-content>
+
+      <form ng-submit="createCategory(category)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="What category do you want to create?" ng-model="category.title">
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Create category</button>
+        </div>
+      </form>
+
+    </ion-content>
+
+  </div>
+

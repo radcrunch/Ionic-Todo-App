@@ -1,0 +1,141 @@
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+a{
+    text-decoration: none;
+}
+
+.content{
+    position: relative;
+}
+
+.menu-wrapper{
+    position: relative;
+}
+
+.completed 
+{
+    text-decoration: line-through;
+}
+
+.item-link{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.item-custom-checkbox{
+    padding-left: 0px !important;
+}
+
+.task-item{
+    display: block;
+    margin-left: 50px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+  display: none;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 15px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+
+.dropdown-menu>li>a {
+  display: block;
+  padding: 3px 16px;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+    line-height: 20px;
+}
+
+.item-title-wrapper{
+    line-height:32px;
+      padding: 10px;
+}
+
+.swipe-item-settings{
+    display: none;
+    float:right; 
+}
+
+.swipe-edit-icon,
+.swipe-delete-icon{
+    font-size:26px;
+    padding: 0 10px;
+}
+
+.swipe-delete-icon{
+    font-size:32px;
+}
+
+.title-margin{
+    
+    margin-left:50px;
+}
+
+/*-------- IONIC OVERRIDING ------*/
+
+.item-content{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-right: 5px !important;
+}
+
+.item-link{
+    display: inline-block !important;
+}
+
+.checkbox{
+    width: 50px;
+}
+
+/*-------- SORTABLE ---------*/
+
+
+.dragging {
+    -moz-transform: scale(1.05, 1.05);
+    -ms-transform: scale(1.05, 1.05);
+    -o-transform: scale(1.05, 1.05);
+    -webkit-transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
+
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder {
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}

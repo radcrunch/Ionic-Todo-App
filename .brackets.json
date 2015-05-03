@@ -1,0 +1,10 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/HybridApps/TodoApp/www/lib/ionic/js/ionic-angular.min.js",
+        "C:/HybridApps/TodoApp/www/lib/ionic/js/ionic.bundle.js",
+        "C:/HybridApps/TodoApp/www/js/factories/category.js",
+        "C:/Workspace/TodoApp-LocalStorage/TodoApp/www/js/controllers/TodoController.js",
+        "C:/Workspace/TodoApp-LocalStorage/TodoApp/www/js/controllers/CategoryController.js",
+        "C:/Workspace/TodoApp-LocalStorage/TodoApp/www/js/services/TodoManager.js"
+    ]
+}

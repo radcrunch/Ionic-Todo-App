@@ -1,0 +1,46 @@
+<ion-view title="categories">
+     <ion-header-bar class="bar-dark">
+       
+        <button class="button button-icon ion-android-search"  ng-click="categorySearch()"></button>
+        <label class="item item-input searchItemWrapper" style="display:none;">
+          <input class="searchItem" type="search" placeholder="Search" ng-model="searchText"   style="width: 135px;">
+       </label>
+      <h1 class="title" style="left:40px !important; text-align: left;">Categories</h1>
+          
+      <button class="button button-icon ion-android-add pull-right" style="right:30px;" ng-click="newCategory()"></button>
+      <button type="button" class="button button-icon ion-android-more-vertical" ng-click="toggleMenu()"></button>    
+            
+   </ion-header-bar>
+    
+    <ion-content>
+     <div class="menu-wrapper">
+         <ul class="dropdown-menu" role="menu">
+            <li><a ng-click="onDeleteAllCategories()" href="#">Delete all</a></li>
+          </ul>
+      </div>
+          
+        <ion-list sortable draggable=".card" sorted="onReorder($fromIndex, $toIndex, $categoryId)">
+            <ion-item ng-show="!categories.length">
+                No categories added yet
+            </ion-item>
+            <ion-item on-swipe-left="onSwipeLeft(this)" on-swipe-right="onSwipeRight()" class="item-light card item-complex" ng-show="categories.length" 
+                 ng-repeat="category in categories | filter: searchText track by $index" item="category" data-category-id="{{category.id}}" ngcloak>
+                  <div class="item-title-wrapper">
+                   <a href="#/categories/{{ category.title}}" ng-class="item-link" class="item-link">{{ category.title}} </a>
+                   <div class="swipe-item-settings">
+                      <span ng-click="onCategoryDelete(category.id)" class="swipe-delete-icon"><i class="ion-trash-a"></i></span>
+                       <span ng-click="onCategoryEdit(category)" class="swipe-edit-icon"><i class="ion-edit"></i></span>                   
+                    </div>
+                   </div>
+                   
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    
+    <!--<div class="bar bar-footer bar-dark">
+      <button class="button button-icon icon ion-ios7-minus-outline" 
+          ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+      <button class="button button-icon ion-arrow-move"
+          ng-click="data.showDelete = false; data.showReorder = !data.showReorder"></button>
+    </div>-->
+</ion-view>

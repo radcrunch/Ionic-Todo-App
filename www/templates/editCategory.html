@@ -1,0 +1,26 @@
+
+      <div class="modal">
+
+    <!-- Modal header bar -->
+    <ion-header-bar class="bar-secondary">
+      <h1 class="title">Edit Category</h1>
+      <button class="button button-clear button-positive" ng-click="closeEditCategory()">Cancel</button>
+    </ion-header-bar>
+
+    <!-- Modal content area -->
+    <ion-content>
+
+      <form ng-submit="updateCategory(selectedCategory)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text"  ng-model="selectedCategory.title" >
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Update category</button>
+        </div>
+      </form>
+
+    </ion-content>
+
+  </div>

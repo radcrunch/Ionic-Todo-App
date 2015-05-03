@@ -1,0 +1,54 @@
+<ion-view title="categoryTasks">
+       
+     <ion-header-bar class="bar-dark">
+      <button class="button button-icon ion-chevron-left" ng-click="backToCategoryList()" ></button>
+      <button class="button button-icon ion-android-search" style="" ng-click="taskSearch()"></button>
+      <label class="item item-input searchItemWrapper" style="display:none;">
+          <input class="searchItem" type="search" placeholder="Search" ng-model="searchText" style="width: 135px;">
+       </label>
+      <h1 class="title" style="left:80px !important; text-align: left;">Tasks</h1>
+
+      
+      <button class="button button-icon ion-android-add pull-right" style="right:30px;" ng-click="newTask()"></button>
+      <button class="button button-icon ion-android-more-vertical"  ng-click="toggleMenu()"></button>
+
+    </ion-header-bar>
+    
+    <ion-content>
+    <div class="menu-wrapper">
+         <ul class="dropdown-menu" role="menu">
+            <li><a ng-click="onDeleteAllTasks()" href="#">Delete all tasks</a></li>
+          </ul>
+      </div>
+      
+    <ion-list sortable draggable=".card" sorted="onReorder($fromIndex, $toIndex, $taskId)" >
+    
+    <ion-item ng-show="!selectedCategory.tasks.length">
+                No tasks added yet
+     </ion-item>
+     
+      <ion-item on-swipe-left="onSwipeLeft(this)" on-swipe-right="onSwipeRight()" ng-show="selectedCategory.tasks.length" 
+       ng-repeat="task in selectedCategory.tasks | filter: searchText" 
+        class=" item-light card item-complex item item-checkbox item-custom-checkbox" data-task-id="{{ task.id }}"  ng-cloak>                          
+           <div class="item-title-wrapper title-margin">
+            <label  class="checkbox">
+            <input type="checkbox" ng-click="toggleTask(task);" ng-checked="task.checked">
+           </label>
+             <span ng-class="appliedClass(task)">{{task.title}}</span>
+             <div class="swipe-item-settings">
+                    <span ng-click="onTaskDelete(task.id)" class="swipe-delete-icon"><i class="ion-trash-a"></i></span>
+                    <span ng-click="onTaskEdit(task)" class="swipe-edit-icon"><i class="ion-edit"></i></span>                   
+             </div>
+           </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  
+  <!--<div class="bar bar-footer bar-dark">
+      <button class="button button-icon icon ion-ios7-minus-outline" 
+          ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+      <button class="button button-icon ion-arrow-move"
+          ng-click="data.showDelete = false; data.showReorder = !data.showReorder"></button>
+    </div>-->
+    
+</ion-view>
