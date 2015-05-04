@@ -1,6 +1,6 @@
 todoApp.controller('TaskController', function($scope, $ionicModal, $ionicPopup, $ionicPlatform, $location, $stateParams, TodoManager) {
       
-   scope.selectedCategory = [];
+   $scope.selectedCategory = [];
     
     $scope.selectedTask = null;
     
@@ -71,7 +71,7 @@ todoApp.controller('TaskController', function($scope, $ionicModal, $ionicPopup, 
          LoadTasks();
          
          $scope.editTaskModal.hide();
-    }
+    };
     
     $scope.reorderTasks = function(task, fromIndex, toIndex){
         
@@ -86,7 +86,7 @@ todoApp.controller('TaskController', function($scope, $ionicModal, $ionicPopup, 
         TodoManager.ReorderTasks($scope.selectedCategory.id, taskId, fromIndex, toIndex);
         
         LoadTasks();
-    }
+    };
     
     $scope.backToCategoryList = function(){
           $location.path("/categories");
